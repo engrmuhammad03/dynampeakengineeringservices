@@ -1,0 +1,540 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Refrigeration & AC | Dynam Peak Engineering</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { overflow-x: hidden; max-width: 100%; scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
+    .gold { color: #D4AF37; }
+    .btn-gold {
+      background: #D4AF37;
+      color: #000;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 60px;
+      font-weight: 700;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-gold:hover { background: #B8860B; color: #000; gap: 12px; transform: translateY(-2px); }
+    .btn-outline-gold {
+      background: transparent;
+      border: 2px solid #D4AF37;
+      color: #D4AF37;
+    }
+    .btn-outline-gold:hover { background: #D4AF37; color: #000; border-color: #D4AF37; }
+    .navbar {
+      background: rgba(0,0,0,0.96);
+      backdrop-filter: blur(12px);
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+      width: 100%;
+    }
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #D4AF37;
+      text-decoration: none;
+    }
+    .back-arrow {
+      background: #D4AF37;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: 0.3s;
+      border: 2px solid #fff;
+    }
+    .back-arrow i { font-size: 1.3rem; color: #000; }
+    .back-arrow:hover { background: #B8860B; transform: translateX(-4px); }
+    .nav-link-custom { color: #ddd; text-decoration: none; font-weight: 500; transition: 0.2s; margin-left: 1.5rem; }
+    .nav-link-custom:hover { color: #D4AF37; }
+    /* Menu button - no border */
+    .navbar-toggler {
+      background: transparent !important;
+      border: none !important;
+      outline: none;
+      box-shadow: none !important;
+    }
+    .navbar-toggler:focus {
+      box-shadow: none !important;
+      outline: none !important;
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23D4AF37' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    }
+    .hero-section {
+      background: linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.85) 100%), url('refrigerator-airconditioning-hero.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      padding: 130px 0 90px;
+      text-align: center;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    .hero-title { font-size: 3rem; font-weight: 800; color: #D4AF37; margin-bottom: 1rem; }
+    
+    /* Section Titles - NO UNDERLINE (removed the ::after pseudo-element) */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #D4AF37;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+    }
+    /* Underline completely removed - no ::after */
+    
+    .service-card {
+      background: #0F0F0F;
+      border-radius: 24px;
+      padding: 30px;
+      transition: 0.4s;
+      height: 100%;
+      position: relative;
+      z-index: 2;
+      opacity: 0;
+      transform: translate(0,0);
+      transition: opacity 0.7s cubic-bezier(0.2,0.9,0.4,1.1), transform 0.7s cubic-bezier(0.2,0.9,0.4,1.1);
+      border: 1px solid rgba(212,175,55,0.3);
+      overflow: hidden;
+    }
+    .service-card:hover { transform: translateY(-8px); border-color: #D4AF37; }
+    .service-card.animate-top { transform: translateY(-60px); }
+    .service-card.animate-bottom { transform: translateY(60px); }
+    .service-card.animate-left { transform: translateX(-60px); }
+    .service-card.animate-right { transform: translateX(60px); }
+    .service-card.revealed { opacity: 1; transform: translate(0,0); }
+    .service-icon { font-size: 2.5rem; color: #D4AF37; margin-bottom: 20px; }
+    .hvac-services-section {
+      background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(0,0,0,0.9)), url('refrigerator-airconditioning - cooling-services.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .feature-list { list-style: none; padding-left: 48px; margin: 0; }
+    .feature-list li {
+      margin-bottom: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      font-size: 1rem;
+      line-height: 1.5;
+      opacity: 0;
+      transform: translateX(0);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .feature-list li:nth-child(odd) { transform: translateX(-40px); }
+    .feature-list li:nth-child(even) { transform: translateX(40px); }
+    .feature-list li.revealed-item { opacity: 1; transform: translateX(0); }
+    .feature-list li i { color: #D4AF37; font-size: 1.25rem; width: 28px; margin-top: 2px; flex-shrink: 0; }
+    .reveal-section { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal-section.revealed { opacity: 1; transform: translateY(0); }
+    
+    /* CTA Section with Background Image */
+    .cta-section {
+      background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1577219491135-ce3912fb0b8b?w=1600&fit=crop');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      padding: 80px 0;
+      text-align: center;
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    
+    /* BEFORE & AFTER CARD */
+    .ba-master-card {
+      background: #0F0F0F;
+      border-radius: 32px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .ba-master-card:hover { transform: translateY(-6px); border-color: #D4AF37; box-shadow: 0 25px 35px -12px rgba(0,0,0,0.5); }
+    .media-stage {
+      position: relative;
+      background: #000;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+    }
+    .ba-media-slider {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .ba-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      opacity: 0;
+      visibility: hidden;
+      z-index: 1;
+    }
+    .ba-slide.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 2;
+    }
+    .slide-label {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      z-index: 10;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(8px);
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      color: #D4AF37;
+      border-left: 3px solid #D4AF37;
+      pointer-events: none;
+    }
+    .transition-timer-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      background: #D4AF37;
+      width: 0%;
+      z-index: 15;
+      transition: width linear 0.02s;
+      box-shadow: 0 0 6px #D4AF37;
+    }
+    .media-controls {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 12px 20px;
+      background: #0c0c0c;
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    .ctrl-btn {
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      color: #D4AF37;
+      border-radius: 60px;
+      padding: 6px 18px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    .ctrl-btn:hover { background: #D4AF37; color: #000; border-color: #D4AF37; }
+    .ba-footer-info {
+      padding: 20px 24px;
+      background: #050505;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    .footer { background: #000; border-top: 1px solid rgba(212,175,55,0.2); padding: 40px 0; text-align: center; margin-top: 60px; }
+    img { max-width: 100%; height: auto; }
+    .container { max-width: 100%; padding-left: 15px; padding-right: 15px; }
+    
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2rem; }
+      .hero-section { padding: 100px 0 60px; }
+      .section-title { font-size: 1.6rem; }
+      .service-card { padding: 20px; }
+      .navbar-collapse { text-align: center; margin-top: 1rem; }
+      .nav-link-custom { margin-left: 0; display: inline-block; padding: 0.5rem; }
+      .back-arrow { width: 32px; height: 32px; }
+      .back-arrow i { font-size: 1rem; }
+      .cta-section { background-attachment: scroll; }
+      .navbar-brand { font-size: 1.3rem; gap: 6px; }
+      .feature-list { padding-left: 24px; }
+      .ba-footer-info { flex-direction: column; text-align: center; gap: 12px; }
+      .media-controls { gap: 8px; }
+      .ctrl-btn { padding: 4px 12px; font-size: 0.65rem; }
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><span class="back-arrow"><i class="fas fa-arrow-left"></i></span> DYNAM PEAK</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html#services-section">Services</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html#ceo-section">CEO</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="hero-section">
+  <div class="container">
+    <h1 class="hero-title">Refrigeration & Air Conditioning</h1>
+    <p class="lead mx-auto" style="max-width:700px;">Professional installation, maintenance, and repair of commercial and residential cooling systems. Keep your environment perfectly chilled with Dynam Peak.</p>
+    <a href="mailto:dynampeakengineeringservices@gmail.com?subject=HVAC%20Service%20Quote%20Request&body=Hello%20Dynam%20Peak%2C%0A%0AI%20am%20interested%20in%20your%20refrigeration%20and%20AC%20services.%20Please%20provide%20a%20quote%20for%3A%0A%0A%5BDescribe%20your%20requirements%20here%5D%0A%0AThank%20you." class="btn-gold mt-4"><i class="fas fa-envelope"></i> Get a Quote</a>
+  </div>
+</section>
+
+<!-- Why Choose Us - NO UNDERLINE -->
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-title" style="display:inline-block;">Why Choose Us</h2>
+    </div>
+    <div class="row align-items-center g-5 reveal-section" id="whyChooseUs">
+      <div class="col-lg-6">
+        <h3 class="gold mb-3">Expert Cooling Solutions</h3>
+        <p class="mb-4">From walk-in freezers to multi-split AC systems, our certified technicians deliver energy-efficient, reliable cooling. We handle everything from design to maintenance.</p>
+        <ul class="feature-list" id="featureList">
+          <li><i class="fas fa-check-circle"></i> <span>Certified HVAC technicians (EPA, NATE)</span></li>
+          <li><i class="fas fa-check-circle"></i> <span>Commercial & residential refrigeration experts</span></li>
+          <li><i class="fas fa-check-circle"></i> <span>Energy-efficient system design & installation</span></li>
+          <li><i class="fas fa-check-circle"></i> <span>24/7 emergency repair service</span></li>
+        </ul>
+      </div>
+      <div class="col-lg-6">
+        <img src="hvac-specialist.jpeg" alt="HVAC Technician" class="img-fluid rounded-4" style="border:1px solid rgba(212,175,55,0.3);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE & AFTER SHOWCASE - NO UNDERLINE -->
+<section class="py-4" id="beforeAfterShowcase">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="section-title" style="display: inline-block;"> Before & After Transformation</h2>
+    </div>
+    <p class="text-center mb-4" style="color:#bbb; max-width:700px; margin-left:auto; margin-right:auto;">Witness the dramatic cooling system overhaul — from inefficient, outdated unit to modern high-performance HVAC.</p>
+    <div data-aos="fade-up">
+      <div class="ba-master-card" id="baMasterCard">
+        <div class="media-stage">
+          <div class="ba-media-slider" id="baSlider">
+            <img class="ba-slide" id="slide0" src="refrigerator-before.jpg" alt="Old dirty AC unit before">
+            <img class="ba-slide" id="slide1" src="refrigerator-after.jpg" alt="Modern AC installation after">
+          </div>
+          <div class="slide-label" id="slideLabel">BEFORE: Before Installation</div>
+          <div class="transition-timer-bar" id="timerBar"></div>
+        </div>
+        <div class="media-controls">
+          <button class="ctrl-btn" id="prevBtn"><i class="fas fa-chevron-left"></i> Prev</button>
+          <button class="ctrl-btn" id="playPauseBtn"><i class="fas fa-pause"></i> Pause</button>
+          <button class="ctrl-btn" id="nextBtn">Next <i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="ba-footer-info">
+          <a href="#ctaSection" class="btn-gold" style="padding: 10px 28px; font-size:0.85rem;"><i class="fas fa-phone-alt"></i> Request Your Upgrade</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Cooling Services - NO UNDERLINE -->
+<section class="hvac-services-section py-5">
+  <div class="container">
+    <h2 class="section-title text-center w-100" style="display:block; text-align:center;">Our Cooling Services</h2>
+    <p class="text-center mb-5">Comprehensive refrigeration and air conditioning solutions</p>
+    <div class="row g-4">
+      <div class="col-md-4"><div class="service-card animate-left"><div class="service-icon"><i class="fas fa-wind"></i></div><h3 class="h5 gold">AC Installation & Replacement</h3><p>Split, window, cassette, and ducted AC systems. Professional sizing and installation for maximum efficiency and comfort.</p></div></div>
+      <div class="col-md-4"><div class="service-card animate-right"><div class="service-icon"><i class="fas fa-snowplow"></i></div><h3 class="h5 gold">Commercial Refrigeration</h3><p>Walk-in coolers, freezers, display cases, and cold rooms for restaurants, supermarkets, and warehouses.</p></div></div>
+      <div class="col-md-4"><div class="service-card animate-top"><div class="service-icon"><i class="fas fa-tools"></i></div><h3 class="h5 gold">Preventive Maintenance</h3><p>Regular filter cleaning, refrigerant top-ups, coil cleaning, and system inspections to prevent breakdowns.</p></div></div>
+      <div class="col-md-4"><div class="service-card animate-bottom"><div class="service-icon"><i class="fas fa-bug"></i></div><h3 class="h5 gold">AC Repair & Troubleshooting</h3><p>Fast diagnosis and repair of compressor failures, gas leaks, sensor issues, and electrical faults.</p></div></div>
+      <div class="col-md-4"><div class="service-card animate-left"><div class="service-icon"><i class="fas fa-charging-station"></i></div><h3 class="h5 gold">Energy Efficiency Upgrades</h3><p>Retrofit old units with inverter technology, smart thermostats, and variable refrigerant flow (VRF) systems.</p></div></div>
+      <div class="col-md-4"><div class="service-card animate-right"><div class="service-icon"><i class="fas fa-industry"></i></div><h3 class="h5 gold">Industrial Cooling</h3><p>Chillers, cooling towers, process cooling for manufacturing plants — design, installation, and maintenance.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Additional Expertise Cards -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-6"><div class="service-card animate-top"><div class="service-icon"><i class="fas fa-certificate"></i></div><h3 class="h5 gold">Certified & Experienced</h3><p>Our technicians hold EPA 608 certification and have over 15 years of combined experience in HVACR. We work with Daikin, Mitsubishi, LG, Carrier, and more.</p></div></div>
+      <div class="col-md-6"><div class="service-card animate-bottom"><div class="service-icon"><i class="fas fa-clock"></i></div><h3 class="h5 gold">24/7 Emergency Service</h3><p>Refrigeration breakdown? AC failure? We respond within hours, not days. Keep your business running and your home comfortable.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section with Background Image -->
+<section class="cta-section" id="ctaSection">
+  <div class="container">
+    <h2 class="gold mb-3" style="font-size:2.2rem;">Need cooling that works as hard as you?</h2>
+    <p class="mb-4" style="font-size:1.1rem;">Contact us for a free consultation, site survey, and no-obligation quote.</p>
+    <a href="mailto:dynampeakengineeringservices@gmail.com?subject=HVAC%20Consultation%20Request&body=Hello%20Dynam%20Peak%2C%0A%0AI%20would%20like%20to%20schedule%20a%20free%20consultation%20for%20refrigeration%20and%20AC%20services.%0A%0AMy%20requirements%3A%20%5Bplease%20describe%5D%0A%0AThank%20you." class="btn-gold"><i class="fas fa-envelope"></i> Get a Quote</a>
+    <a href="tel:08163762896" class="btn-gold ms-3 btn-outline-gold"><i class="fas fa-phone-alt"></i> Call Now: 08163762896</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 text-md-start mb-3 mb-md-0">
+        <p class="mb-0">&copy; 2025 Dynam Peak Engineering Services Ltd. All rights reserved.</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <p class="mb-0">
+          <a href="index.html" class="text-decoration-none gold">Back to Home</a> | 
+          <a href="tel:08163762896" class="text-decoration-none gold">08163762896</a> | 
+          <a href="mailto:dynampeakengineeringservices@gmail.com" class="text-decoration-none gold">Email Us</a>
+        </p>
+        <p class="mb-0 small"><i class="fas fa-map-marker-alt"></i> Umaru Musa Yar'adua way, new millennium city, Kaduna</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: false });
+  
+  // Before & After Slider with Auto Transition
+  const slides = document.querySelectorAll('.ba-slide');
+  const labels = ["BEFORE: Inefficient & Outdated Unit", "AFTER: Modern High-Efficiency HVAC"];
+  const labelEl = document.getElementById('slideLabel');
+  let currentIndex = 0;
+  let autoInterval = null;
+  let isPlaying = true;
+  let timerAnimation = null;
+  const transitionDuration = 5000;
+  const timerBar = document.getElementById('timerBar');
+  
+  function updateSlide(index) {
+    slides.forEach((slide, i) => {
+      if(i === index) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+    });
+    if(labelEl) labelEl.innerText = labels[index] || `Stage ${index+1}`;
+    resetTimerBar();
+  }
+  
+  function resetTimerBar() {
+    if(timerAnimation) clearInterval(timerAnimation);
+    timerBar.style.width = '0%';
+    if(!isPlaying) return;
+    const startTime = Date.now();
+    timerAnimation = setInterval(() => {
+      if(!isPlaying) return;
+      const elapsed = Date.now() - startTime;
+      let percent = (elapsed / transitionDuration) * 100;
+      if(percent >= 100) percent = 100;
+      timerBar.style.width = `${Math.min(percent, 100)}%`;
+      if(elapsed >= transitionDuration) {
+        clearInterval(timerAnimation);
+        nextSlide();
+      }
+    }, 30);
+  }
+  
+  function nextSlide() { goToSlide((currentIndex + 1) % slides.length); }
+  function prevSlide() { goToSlide((currentIndex - 1 + slides.length) % slides.length); }
+  function goToSlide(idx) {
+    if(currentIndex === idx) return;
+    currentIndex = idx;
+    updateSlide(currentIndex);
+  }
+  
+  function startAutoRotation() {
+    if(autoInterval) clearInterval(autoInterval);
+    autoInterval = setInterval(() => {
+      if(isPlaying) nextSlide();
+    }, transitionDuration + 50);
+    resetTimerBar();
+  }
+  
+  function stopAutoRotation() {
+    if(autoInterval) clearInterval(autoInterval);
+    autoInterval = null;
+    if(timerAnimation) clearInterval(timerAnimation);
+  }
+  
+  function togglePlayPause() {
+    isPlaying = !isPlaying;
+    const btn = document.getElementById('playPauseBtn');
+    if(isPlaying) {
+      btn.innerHTML = '<i class="fas fa-pause"></i> Pause';
+      startAutoRotation();
+      resetTimerBar();
+    } else {
+      btn.innerHTML = '<i class="fas fa-play"></i> Play';
+      stopAutoRotation();
+      if(timerAnimation) clearInterval(timerAnimation);
+      timerBar.style.width = '0%';
+    }
+  }
+  
+  document.getElementById('prevBtn').addEventListener('click', () => { if(!isPlaying) { prevSlide(); } else { stopAutoRotation(); prevSlide(); startAutoRotation(); } });
+  document.getElementById('nextBtn').addEventListener('click', () => { if(!isPlaying) { nextSlide(); } else { stopAutoRotation(); nextSlide(); startAutoRotation(); } });
+  document.getElementById('playPauseBtn').addEventListener('click', togglePlayPause);
+  
+  // Initialize
+  updateSlide(0);
+  startAutoRotation();
+  
+  // Intersection Observer for reveal animations
+  const revealItems = document.querySelectorAll('.service-card, .reveal-section, .ba-master-card');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -50px 0px' });
+  revealItems.forEach(el => observer.observe(el));
+  
+  const featureItems = document.querySelectorAll('#featureList li');
+  const bulletObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed-item');
+        bulletObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3, rootMargin: '0px 0px -30px 0px' });
+  featureItems.forEach(item => bulletObserver.observe(item));
+  
+  const whyChoose = document.getElementById('whyChooseUs');
+  if (whyChoose) observer.observe(whyChoose);
+  
+  // Navbar collapse on link click
+  document.querySelectorAll('.nav-link-custom').forEach(link => {
+    link.addEventListener('click', () => {
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+      if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+        new bootstrap.Collapse(navbarCollapse).toggle();
+      }
+    });
+  });
+</script>
+</body>
+</html>

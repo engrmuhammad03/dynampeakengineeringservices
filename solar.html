@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>Dynam Peak | Solar Installation – Recent Projects</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { overflow-x: hidden !important; width: 100%; position: relative; scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #e0e0e0; overflow-x: hidden !important; width: 100%; min-height: 100vh; font-size: 16px; }
+    .container-custom { max-width: 1280px; margin: 0 auto; padding: 0 24px; width: 100%; box-sizing: border-box; }
+    :root { --gold: #D4AF37; --gold-dark: #B8860B; --gold-light: #E6C200; --dark: #0a0a0a; --card-bg: #0F0F0F; --border-glow: rgba(212, 175, 55, 0.3); --skeleton-bg: #1a1a1a; --skeleton-glow: #2a2a2a; }
+    .back-home-arrow { position: fixed; top: 24px; left: 24px; z-index: 1100; background: rgba(0,0,0,0.75); backdrop-filter: blur(8px); width: 44px; height: 44px; border-radius: 60px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--gold); transition: all 0.25s ease; cursor: pointer; text-decoration: none; color: var(--gold); font-size: 1.3rem; }
+    .back-home-arrow:hover { background: var(--gold); color: #000; transform: translateX(-4px); }
+    .hero-solar { position: relative; width: 100%; overflow-x: hidden; min-height: 500px; display: flex; align-items: center; border-bottom: 1px solid var(--border-glow); background: linear-gradient(125deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.7) 100%), url('solar-hero-section.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+    .hero-content { position: relative; z-index: 10; padding: 100px 0 70px; width: 100%; }
+    @media (min-width: 768px) { .hero-content { padding: 120px 0 80px; } }
+    @media (min-width: 992px) { .hero-content { padding: 130px 0 90px; } }
+    .hero-solar .badge-solar { background: var(--gold); color: #000; font-weight: 800; padding: 6px 18px; border-radius: 40px; display: inline-block; margin-bottom: 20px; font-size: 0.85rem; letter-spacing: 1px; }
+    .hero-solar h1 { font-size: 2.2rem; font-weight: 800; color: var(--gold); margin-bottom: 1rem; line-height: 1.2; }
+    @media (min-width: 768px) { .hero-solar h1 { font-size: 2.8rem; } }
+    @media (min-width: 992px) { .hero-solar h1 { font-size: 3.2rem; } }
+    .hero-solar .lead { font-size: 1rem; max-width: 550px; margin-bottom: 1.5rem; line-height: 1.5; }
+    @media (min-width: 768px) { .hero-solar .lead { font-size: 1.1rem; } }
+    .hero-stats { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 1.5rem; }
+    .hero-stats div span { font-weight: 800; font-size: 1.6rem; color: var(--gold); }
+    .hero-stats div { font-size: 0.9rem; }
+    .animate-hero-item { opacity: 0; transform: translateY(20px); animation: sweetFloatUp 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards; }
+    .delay-1 { animation-delay: 0.1s; } .delay-2 { animation-delay: 0.2s; } .delay-3 { animation-delay: 0.3s; } .delay-4 { animation-delay: 0.4s; }
+    @keyframes sweetFloatUp { 0% { opacity: 0; transform: translateY(20px); filter: blur(4px); } 100% { opacity: 1; transform: translateY(0); filter: blur(0); } }
+    .section-title { font-size: 2rem; font-weight: 800; margin-bottom: 45px; text-align: center; color: var(--gold); position: relative; }
+    .section-title:after { content: ''; display: block; width: 70px; height: 3px; background: var(--gold); margin: 15px auto 0; border-radius: 4px; }
+    @media (min-width: 768px) { .section-title { font-size: 2.5rem; margin-bottom: 55px; } }
+    
+    .process-section { background: linear-gradient(135deg, rgba(0,0,0,0.88), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1508514177221-1881bcf16f9d?w=1920&h=1080&fit=crop'); background-size: cover; background-position: center; padding: 60px 0; }
+    .process-step { display: flex; gap: 20px; border-radius: 24px; padding: 28px; border-left: 5px solid var(--gold); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 150px; transition: all 0.3s ease; }
+    .process-step:hover { transform: translateY(-5px); border-left-color: var(--gold-light); background: rgba(10,10,10,0.92); }
+    .step-1 { background: linear-gradient(115deg, rgba(15,15,15,0.92) 60%, rgba(0,0,0,0.6)), url('solar-process1.png'); background-size: cover; background-position: center; }
+    .step-2 { background: linear-gradient(115deg, rgba(15,15,15,0.92) 60%, rgba(0,0,0,0.6)), url('solar-process2.jpg'); background-size: cover; background-position: center; }
+    .step-3 { background: linear-gradient(115deg, rgba(15,15,15,0.92) 60%, rgba(0,0,0,0.6)), url('solar-process3.jpg'); background-size: cover; background-position: center; }
+    .step-4 { background: linear-gradient(115deg, rgba(15,15,15,0.92) 60%, rgba(0,0,0,0.6)), url('solar-process4.jpg'); background-size: cover; background-position: center; }
+    .step-number { font-size: 2rem; font-weight: 800; color: var(--gold); opacity: 0.8; line-height: 1; min-width: 60px; }
+    .process-step h4 { font-size: 1.2rem; margin-bottom: 8px; color: var(--gold); font-weight: 700; }
+    .process-step p { font-size: 0.9rem; color: #ccc; line-height: 1.5; }
+    @media (max-width: 768px) {
+      .process-step { flex-direction: column; text-align: center; align-items: center; border-left: none; border-top: 5px solid var(--gold); }
+      .step-number { margin-bottom: 10px; min-width: auto; }
+    }
+    
+    /* Why Choose Us Section */
+    .why-choose-us { padding: 70px 0; background: linear-gradient(135deg, #0a0a0a 0%, #0f0f0f 100%); border-bottom: 1px solid var(--border-glow); }
+    .why-card { background: var(--card-bg); border-radius: 20px; padding: 30px 25px; text-align: center; transition: all 0.3s ease; border: 1px solid var(--border-glow); height: 100%; }
+    .why-card:hover { transform: translateY(-8px); border-color: var(--gold); box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
+    .why-icon { width: 70px; height: 70px; background: rgba(212, 175, 55, 0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; transition: all 0.3s ease; }
+    .why-card:hover .why-icon { background: var(--gold); }
+    .why-icon i { font-size: 2rem; color: var(--gold); transition: all 0.3s ease; }
+    .why-card:hover .why-icon i { color: #000; }
+    .why-card h4 { font-size: 1.2rem; font-weight: 700; color: var(--gold); margin-bottom: 12px; }
+    .why-card p { font-size: 0.85rem; color: #bbb; line-height: 1.5; }
+    
+    /* Dynamic Card Styles */
+    .dynamic-project-card {
+      background: var(--card-bg);
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid var(--border-glow);
+      transition: transform 0.3s, box-shadow 0.3s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .dynamic-project-card:hover { transform: translateY(-6px); border-color: var(--gold); box-shadow: 0 20px 30px -12px rgba(0,0,0,0.6); }
+    .project-media-stage {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #000;
+      cursor: pointer;
+    }
+    .dynamic-slider {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .dynamic-slide-item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.4s ease;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 1;
+    }
+    .dynamic-slide-item.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 2;
+    }
+    /* Enhanced video quality - force hardware acceleration and better rendering */
+    video.dynamic-slide-item, video.work-video, #fullscreenVideo {
+      will-change: transform;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .slide-play-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background: rgba(0,0,0,0.7);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 20;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .slide-play-overlay i { font-size: 1.8rem; color: var(--gold); margin-left: 4px; }
+    .project-media-stage:hover .slide-play-overlay { opacity: 1; }
+    .slide-badge-solar {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      z-index: 15;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(8px);
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      color: var(--gold);
+      border-left: 3px solid var(--gold);
+      pointer-events: none;
+    }
+    .card-controls-solar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      padding: 14px 16px;
+      background: #0c0c0c;
+      border-top: 1px solid var(--border-glow);
+      border-bottom: 1px solid var(--border-glow);
+    }
+    .ctrl-btn-solar {
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid var(--border-glow);
+      color: var(--gold);
+      border-radius: 40px;
+      padding: 6px 16px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    .ctrl-btn-solar:hover { background: var(--gold); color: #000; border-color: var(--gold); }
+    .project-info-solar { padding: 20px 22px 22px; }
+    .project-title-solar { font-size: 1.3rem; font-weight: 800; color: var(--gold); margin-bottom: 8px; }
+    .project-desc-solar { font-size: 0.85rem; color: #bcbcbc; margin-bottom: 12px; line-height: 1.5; }
+    .project-stats-solar { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px; font-size: 0.8rem; }
+    .project-stats-solar i { color: var(--gold); width: 24px; }
+    .badge-media-solar { background: rgba(212, 175, 55, 0.2); color: var(--gold); border-radius: 30px; padding: 5px 12px; font-size: 0.7rem; display: inline-block; margin-top: 8px; }
+    
+    /* Skeleton Loader Styles */
+    .skeleton-card-solar { background: var(--card-bg); border-radius: 28px; overflow: hidden; border: 1px solid var(--border-glow); height: 100%; }
+    .skeleton-media-solar { aspect-ratio: 16 / 9; background: linear-gradient(90deg, var(--skeleton-bg) 25%, var(--skeleton-glow) 50%, var(--skeleton-bg) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; }
+    .skeleton-info-solar { padding: 20px; }
+    .skeleton-title-solar { height: 24px; width: 70%; background: linear-gradient(90deg, var(--skeleton-bg) 25%, var(--skeleton-glow) 50%, var(--skeleton-bg) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: 8px; margin-bottom: 12px; }
+    .skeleton-text-solar { height: 16px; width: 90%; background: linear-gradient(90deg, var(--skeleton-bg) 25%, var(--skeleton-glow) 50%, var(--skeleton-bg) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: 6px; margin-bottom: 16px; }
+    .skeleton-stats-solar { display: flex; gap: 16px; }
+    .skeleton-stat-solar { height: 20px; width: 80px; background: linear-gradient(90deg, var(--skeleton-bg) 25%, var(--skeleton-glow) 50%, var(--skeleton-bg) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: 6px; }
+    @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+    .projects-container-solar { min-height: 400px; }
+    .skeleton-wrapper-solar { display: flex; }
+    .projects-grid-solar { display: none; }
+    .projects-container-solar.loaded .skeleton-wrapper-solar { display: none; }
+    .projects-container-solar.loaded .projects-grid-solar { display: block; }
+    
+    .footer-modern { background: #000000; padding-top: 55px; border-top: 1px solid var(--border-glow); width: 100%; overflow-x: hidden; }
+    .footer-modern h3 { font-size: 1.5rem; margin-bottom: 10px; }
+    .footer-modern h5 { font-size: 1.2rem; margin-bottom: 18px; font-weight: 700; }
+    .footer-modern p { font-size: 0.9rem; line-height: 1.6; }
+    .footer-link-modern { color: #e0e0e0 !important; text-decoration: none; display: inline-block; margin-bottom: 10px; transition: 0.2s; font-size: 0.9rem; }
+    .footer-link-modern:hover { color: var(--gold) !important; text-decoration: underline; transform: translateX(3px); }
+    .copyright { border-top: 1px solid #1a1a1a; padding: 25px 0; text-align: center; margin-top: 35px; color: #aaa; font-size: 0.85rem; }
+    .text-gold { color: var(--gold); }
+    .faq-item { background: var(--card-bg); border-radius: 18px; margin-bottom: 18px; border: 1px solid var(--border-glow); overflow: hidden; cursor: pointer; transition: all 0.2s ease; }
+    .faq-item:hover { border-color: var(--gold); }
+    .faq-question { padding: 18px 22px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; color: var(--gold); font-size: 1rem; }
+    .faq-question i { transition: transform 0.3s ease; }
+    .faq-item.open .faq-question i { transform: rotate(180deg); }
+    .faq-answer { max-height: 0; overflow: hidden; padding: 0 22px; transition: max-height 0.4s ease; color: #b0b0b0; font-size: 0.9rem; line-height: 1.5; }
+    .faq-item.open .faq-answer { max-height: 300px; padding: 0 22px 18px; border-top: 1px solid var(--border-glow); }
+    .btn-gold { background: var(--gold); color: #000; font-weight: 700; padding: 12px 28px; border-radius: 60px; transition: 0.2s; display: inline-flex; align-items: center; gap: 10px; border: none; font-size: 0.9rem; text-decoration: none; }
+    .btn-gold:hover { background: var(--gold-dark); transform: translateY(-2px); color: #000; }
+    
+    .contact-btn-wrapper { text-align: center; margin: 50px 0 30px; }
+    
+    /* Fullscreen video enhancement */
+    #fullscreenVideo {
+      width: auto;
+      max-width: 98vw;
+      max-height: 95vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    }
+    
+    /* Responsive text adjustments */
+    @media (max-width: 768px) {
+      body { font-size: 14px; }
+      .container-custom { padding: 0 18px; }
+      .hero-content { padding: 80px 0 50px; }
+      .hero-solar h1 { font-size: 1.8rem; }
+      .hero-solar .lead { font-size: 0.9rem; }
+      .section-title { font-size: 1.6rem; margin-bottom: 30px; }
+      .process-step { padding: 20px; }
+      .step-number { font-size: 1.8rem; margin-bottom: 8px; }
+      .process-step h4 { font-size: 1.1rem; }
+      .process-step p { font-size: 0.85rem; }
+      .why-card { padding: 20px; }
+      .why-card h4 { font-size: 1rem; }
+      .why-card p { font-size: 0.8rem; }
+      .project-title-solar { font-size: 1.1rem; }
+      .project-desc-solar { font-size: 0.8rem; }
+      .project-stats-solar { font-size: 0.75rem; }
+      .footer-modern p { font-size: 0.85rem; }
+      .footer-link-modern { font-size: 0.85rem; }
+      .copyright { font-size: 0.75rem; }
+      .faq-question { font-size: 0.9rem; padding: 15px 18px; }
+      .faq-answer { font-size: 0.85rem; }
+      .btn-gold { padding: 10px 20px; font-size: 0.85rem; }
+      .ctrl-btn-solar { padding: 4px 12px; font-size: 0.7rem; }
+      .slide-badge-solar { font-size: 0.7rem; padding: 4px 12px; }
+      #fullscreenVideo { max-width: 99vw; max-height: 92vh; }
+    }
+    
+    @media (max-width: 480px) {
+      .hero-solar h1 { font-size: 1.5rem; }
+      .section-title { font-size: 1.4rem; }
+      .section-title:after { width: 50px; }
+      .hero-stats div span { font-size: 1.3rem; }
+      .hero-stats div { font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+<a href="index.html" class="back-home-arrow" title="Back to Home"><i class="fas fa-arrow-left"></i></a>
+<section class="hero-solar">
+  <div class="hero-content">
+    <div class="container-custom">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="badge-solar animate-hero-item delay-1"><i class="fas fa-sun me-2"></i> SOLAR ENERGY</div>
+          <h1 class="animate-hero-item delay-2">Cut energy bills by up to 70%</h1>
+          <p class="lead animate-hero-item delay-3">Premium solar systems.</p>
+          <div class="animate-hero-item delay-4"><a href="#recentProjects" class="btn-gold"><i class="fas fa-solar-panel"></i> See Recent Projects →</a></div>
+          <div class="hero-stats animate-hero-item delay-4"><div><span>25+ yrs</span><br>Expertise</div><div><span>2.3 MW</span><br>Installed</div><div><span>500+</span><br>Happy clients</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4-STEP SOLAR JOURNEY -->
+<section class="process-section">
+  <div class="container-custom">
+    <div class="section-title" data-aos="fade-up">Our 4-Step Solar Journey</div>
+    <div class="row g-4">
+      <div class="col-md-6" data-aos="fade-right" data-aos-delay="100"><div class="process-step step-1"><div class="step-number">01</div><div><h4 class="text-gold">Site Assessment & NEMSA Compliance</h4><p>Free energy audit with NEMSA-certified inspectors.</p></div></div></div>
+      <div class="col-md-6" data-aos="fade-left" data-aos-delay="150"><div class="process-step step-2"><div class="step-number">02</div><div><h4 class="text-gold">REA Guidelines & DISCO Approval</h4><p>We handle all paperwork with REA and your local DISCO.</p></div></div></div>
+      <div class="col-md-6" data-aos="fade-right" data-aos-delay="200"><div class="process-step step-3"><div class="step-number">03</div><div><h4 class="text-gold">Professional Installation (NEMSA Supervised)</h4><p>Certified engineers install using NERC-approved components.</p></div></div></div>
+      <div class="col-md-6" data-aos="fade-left" data-aos-delay="250"><div class="process-step step-4"><div class="step-number">04</div><div><h4 class="text-gold">Commissioning & NEMSA Certification</h4><p>Final inspection and issuance of compliance certificate.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-choose-us"><div class="container-custom"><div class="section-title" data-aos="fade-up">Why Choose Dynam Peak?</div><div class="row g-4"><div class="col-md-4"><div class="why-card"><div class="why-icon"><i class="fas fa-certificate"></i></div><h4>NEMSA Certified</h4><p>Fully licensed and accredited by Nigerian Electricity Management Services Agency.</p></div></div><div class="col-md-4"><div class="why-card"><div class="why-icon"><i class="fas fa-trophy"></i></div><h4>25+ Years Experience</h4><p>Over two decades of electrical and solar engineering excellence across Nigeria.</p></div></div><div class="col-md-4"><div class="why-card"><div class="why-icon"><i class="fas fa-headset"></i></div><h4>24/7 Customer Support</h4><p>Dedicated support team available round the clock.</p></div></div><div class="col-md-4"><div class="why-card"><div class="why-icon"><i class="fas fa-hand-holding-usd"></i></div><h4>Flexible Financing</h4><p>Affordable payment plans and assistance with REA/CREDICORP financing.</p></div></div><div class="col-md-4"><div class="why-card"><div class="why-icon"><i class="fas fa-solar-panel"></i></div><h4>Premium Tier-1 Components</h4><p>Highest quality solar panels, inverters, and batteries from trusted global brands.</p></div></div></div></div></section>
+
+<!-- RECENT PROJECTS SECTION -->
+<section class="py-4 py-md-5" id="recentProjects"><div class="container-custom"><div class="section-title" data-aos="fade-up">Recent Solar Projects</div><p class="text-center mb-4" style="color:#bbb;">Click any media to view full screen.</p><div class="projects-container-solar" id="projectsContainer"><div class="skeleton-wrapper-solar"><div class="row g-5"><div class="col-md-6 col-lg-4"><div class="skeleton-card-solar"><div class="skeleton-media-solar"></div><div class="skeleton-info-solar"><div class="skeleton-title-solar"></div><div class="skeleton-text-solar"></div><div class="skeleton-stats-solar"><div class="skeleton-stat-solar"></div><div class="skeleton-stat-solar"></div></div></div></div></div><div class="col-md-6 col-lg-4"><div class="skeleton-card-solar"><div class="skeleton-media-solar"></div><div class="skeleton-info-solar"><div class="skeleton-title-solar"></div><div class="skeleton-text-solar"></div><div class="skeleton-stats-solar"><div class="skeleton-stat-solar"></div><div class="skeleton-stat-solar"></div></div></div></div></div><div class="col-md-6 col-lg-4"><div class="skeleton-card-solar"><div class="skeleton-media-solar"></div><div class="skeleton-info-solar"><div class="skeleton-title-solar"></div><div class="skeleton-text-solar"></div><div class="skeleton-stats-solar"><div class="skeleton-stat-solar"></div><div class="skeleton-stat-solar"></div></div></div></div></div><div class="col-md-6 col-lg-4"><div class="skeleton-card-solar"><div class="skeleton-media-solar"></div><div class="skeleton-info-solar"><div class="skeleton-title-solar"></div><div class="skeleton-text-solar"></div><div class="skeleton-stats-solar"><div class="skeleton-stat-solar"></div><div class="skeleton-stat-solar"></div></div></div></div></div></div></div><div class="projects-grid-solar"><div class="row g-5" id="recentProjectsGrid"></div></div></div></div></section>
+
+<!-- FAQ -->
+<section class="py-4 py-md-5"><div class="container-custom"><div class="section-title" data-aos="fade-up">Solar FAQs</div><div class="row justify-content-center"><div class="col-lg-8"><div id="solarFaqContainer"></div></div></div></div></section>
+
+<div class="contact-btn-wrapper"><a href="index.html?service=solar#contact" class="btn-gold"><i class="fas fa-envelope"></i> Contact Us for Solar Installation</a></div>
+
+<footer class="footer-modern"><div class="container-custom"><div class="row g-4"><div class="col-md-4"><i class="fas fa-bolt fs-1 text-gold"></i><h3 class="text-gold mt-2">Dynam Peak</h3><p>Leading renewable energy & electrical infrastructure partner in Nigeria since 2017.</p></div><div class="col-md-3"><h5 class="text-gold">Quick Links</h5><ul class="list-unstyled"><li><a href="index.html" class="footer-link-modern">Home</a></li><li><a href="#recentProjects" class="footer-link-modern">Recent Projects</a></li><li><a href="#" class="footer-link-modern">FAQs</a></li></ul></div><div class="col-md-5"><h5 class="text-gold">Contact</h5><p><i class="fas fa-phone-alt me-2"></i> <a href="tel:08163762896" class="text-decoration-none text-white">08163762896</a> | <a href="tel:+2348163762896" class="text-decoration-none text-white">+2348163762896</a></p><p><i class="fas fa-envelope me-2"></i> <a href="mailto:dynampeakengineeringservices@gmail.com" class="text-decoration-none text-white">dynampeakengineeringservices@gmail.com</a></p><p><i class="fas fa-map-marker-alt me-2"></i> Umaru Musa Yar'adua way, new millennium city, Kaduna</p></div></div><div class="copyright"><span>&copy; 2025 Dynam Peak Solar Division. Powering Nigeria with clean energy.</span></div></div></footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: false });
+  
+  // PROJECT DATA - 4 CARDS (MUTED, NO AUTOPLAY, ENHANCED QUALITY)
+  const card1Slides = [
+    { type: "image", src: "solar-poles-before.jpg", label: "Site Preparation" },
+    { type: "image", src: "solar-poles-during-mounting.jpg", label: "Pole Mounting" },
+    { type: "image", src: "solar-poles-during-installation.jpg", label: "Panel Installation" },
+    { type: "image", src: "solar-poles-after.jpg", label: "Complete System" }
+  ];
+  const card2Slides = [{ type: "video", src: "solar-car-park.mp4", label: "Complete Solar Installation" }];
+  const card3Slides = [{ type: "video", src: "solar-installation-day.mp4", label: "Day Installation" }];
+  const card4Slides = [{ type: "video", src: "solar-installation-day2.mp4", label: "Rooftop Solar Array" }];
+  
+  const projectsData = [
+    { id:1, title:"4-Stage Pole Mounted Installation", description:"Complete transformation from empty site to operational system.", slides:card1Slides, capacity:"15.2 kWp", savings:"62% bill reduction", badge:"4-Stage Transformation" },
+    { id:2, title:"Complete Solar Installation", description:"Full solar array installation project in action.", slides:card2Slides, capacity:"15.2 kWp", savings:"62% bill reduction", badge:"Project Video" },
+    { id:3, title:"Daytime Installation", description:"Professional installation process during daytime hours in Babban Saura, Kaduna.", slides:card3Slides, capacity:"15.2 kWp", savings:"62% bill reduction", badge:"Installation Video" },
+    { id:4, title:"Rooftop Solar Array", description:"High-efficiency rooftop installation with premium panels.", slides:card4Slides, capacity:"10.5 kWp", savings:"58% bill reduction", badge:"Rooftop Project" }
+  ];
+  
+  // Fullscreen function - NO sound controls visible, videos remain muted but with option
+  function openFullscreen(mediaElement) {
+    if (mediaElement.tagName === 'VIDEO') {
+      // Keep muted but allow user to unmute via browser controls if needed
+      // No forced unmute - preserves user preference
+      mediaElement.play().catch(e => console.log('play error:', e));
+      if (mediaElement.requestFullscreen) mediaElement.requestFullscreen();
+      else if (mediaElement.webkitRequestFullscreen) mediaElement.webkitRequestFullscreen();
+      else if (mediaElement.msRequestFullscreen) mediaElement.msRequestFullscreen();
+    } else if (mediaElement.tagName === 'IMG') {
+      const modal = document.createElement('div');
+      modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:10000;display:flex;align-items:center;justify-content:center;cursor:pointer';
+      const modalImg = document.createElement('img');
+      modalImg.src = mediaElement.src;
+      modalImg.style.cssText = 'max-width:90%;max-height:90%;object-fit:contain;border:3px solid var(--gold);border-radius:12px';
+      const closeBtn = document.createElement('button');
+      closeBtn.innerHTML = '✕';
+      closeBtn.style.cssText = 'position:absolute;top:20px;right:30px;font-size:2rem;background:transparent;border:none;color:var(--gold);cursor:pointer;z-index:10001';
+      modal.appendChild(modalImg); modal.appendChild(closeBtn);
+      document.body.appendChild(modal);
+      document.body.style.overflow = 'hidden';
+      const closeModal = () => { modal.remove(); document.body.style.overflow = ''; };
+      modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+      closeBtn.addEventListener('click', closeModal);
+    }
+  }
+  
+  function renderProjects() {
+    const grid = document.getElementById('recentProjectsGrid');
+    const container = document.getElementById('projectsContainer');
+    if (!grid) return;
+    
+    grid.innerHTML = projectsData.map((project, cardIdx) => {
+      const slidesHtml = project.slides.map((slide, slideIdx) => {
+        if (slide.type === 'video') {
+          // Enhanced video with high quality settings: preload="metadata", no autoplay, muted
+          return `<video class="dynamic-slide-item" id="slide-${cardIdx}-${slideIdx}" data-type="video" muted playsinline loop preload="metadata" disableRemotePlayback controlslist="nodownload noremoteplayback"><source src="${slide.src}" type="video/mp4"></video>`;
+        } else {
+          return `<img class="dynamic-slide-item" id="slide-${cardIdx}-${slideIdx}" data-type="image" src="${slide.src}" alt="${slide.label}" loading="lazy">`;
+        }
+      }).join('');
+      const showControls = project.slides.length > 1 ? `<div class="card-controls-solar"><button class="ctrl-btn-solar" data-prev="${cardIdx}"><i class="fas fa-chevron-left"></i> Prev</button><button class="ctrl-btn-solar" data-playpause="${cardIdx}"><i class="fas fa-play"></i> Play</button><button class="ctrl-btn-solar" data-next="${cardIdx}">Next <i class="fas fa-chevron-right"></i></button></div>` : '';
+      return `<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="${cardIdx * 100}"><div class="dynamic-project-card" data-card-index="${cardIdx}"><div class="project-media-stage"><div class="dynamic-slider" id="slider-${cardIdx}">${slidesHtml}</div><div class="slide-play-overlay"><i class="fas fa-expand"></i></div><div class="slide-badge-solar" id="badge-${cardIdx}">${project.slides[0].label}</div></div>${showControls}<div class="project-info-solar"><h3 class="project-title-solar">${project.title}</h3><p class="project-desc-solar">${project.description}</p><div class="project-stats-solar"><div><i class="fas fa-solar-panel"></i> ${project.capacity}</div><div><i class="fas fa-chart-line"></i> ${project.savings}</div></div><span class="badge-media-solar"><i class="fas fa-${project.slides[0].type === 'video' ? 'video' : 'image'}"></i> ${project.badge}</span></div></div></div>`;
+    }).join('');
+    
+    // Initialize each card
+    projectsData.forEach((project, cardIdx) => {
+      const slideCount = project.slides.length;
+      const slides = [];
+      for (let i = 0; i < slideCount; i++) {
+        const el = document.getElementById(`slide-${cardIdx}-${i}`);
+        if (el) slides.push(el);
+      }
+      if (slides.length === 0) return;
+      const badgeEl = document.getElementById(`badge-${cardIdx}`);
+      const mediaStage = document.querySelector(`.dynamic-project-card[data-card-index="${cardIdx}"] .project-media-stage`);
+      const playOverlay = document.querySelector(`.dynamic-project-card[data-card-index="${cardIdx}"] .slide-play-overlay`);
+      
+      // MUTE all videos by default, NO AUTOPLAY, preload metadata only for quality
+      slides.forEach(slide => {
+        if (slide.tagName === 'VIDEO') {
+          slide.muted = true;
+          slide.setAttribute('muted', '');
+          slide.setAttribute('playsinline', '');
+          slide.setAttribute('loop', '');
+          slide.removeAttribute('autoplay');
+          slide.pause();
+          // Ensure high quality playback
+          slide.setAttribute('preload', 'metadata');
+        }
+      });
+      
+      if (slideCount === 1) {
+        // Single media: show active, fullscreen on click only
+        slides[0].classList.add('active');
+        const handleFull = (e) => { 
+          e.stopPropagation(); 
+          openFullscreen(slides[0]); 
+        };
+        if (mediaStage) mediaStage.addEventListener('click', handleFull);
+        if (playOverlay) playOverlay.addEventListener('click', handleFull);
+        return;
+      }
+      
+      // Multi-slide logic - NO AUTOPLAY, user must click Play
+      let currentSlide = 0;
+      let isPlaying = false;
+      let playInterval = null;
+      
+      function showSlide(index) {
+        slides.forEach(slide => {
+          if (slide.tagName === 'VIDEO') slide.pause();
+          slide.classList.remove('active');
+        });
+        slides[index].classList.add('active');
+        if (badgeEl && project.slides[index]) badgeEl.innerText = project.slides[index].label;
+        if (slides[index].tagName === 'VIDEO') {
+          slides[index].currentTime = 0;
+          slides[index].pause();
+        }
+      }
+      function nextSlide() { currentSlide = (currentSlide + 1) % slideCount; showSlide(currentSlide); }
+      function prevSlide() { currentSlide = (currentSlide - 1 + slideCount) % slideCount; showSlide(currentSlide); }
+      function startAutoPlay() { if (playInterval) clearInterval(playInterval); playInterval = setInterval(() => { if (isPlaying) nextSlide(); }, 5000); }
+      function stopAutoPlay() { if (playInterval) { clearInterval(playInterval); playInterval = null; } }
+      function togglePlayPause() {
+        isPlaying = !isPlaying;
+        const btn = document.querySelector(`button[data-playpause="${cardIdx}"]`);
+        if (btn) {
+          if (isPlaying) {
+            btn.innerHTML = '<i class="fas fa-pause"></i> Pause';
+            startAutoPlay();
+          } else {
+            btn.innerHTML = '<i class="fas fa-play"></i> Play';
+            stopAutoPlay();
+          }
+        }
+      }
+      const handleFullscreenAny = (e) => { e.stopPropagation(); openFullscreen(slides[currentSlide]); };
+      if (mediaStage) mediaStage.addEventListener('click', handleFullscreenAny);
+      if (playOverlay) playOverlay.addEventListener('click', handleFullscreenAny);
+      
+      const prevBtn = document.querySelector(`button[data-prev="${cardIdx}"]`);
+      const nextBtn = document.querySelector(`button[data-next="${cardIdx}"]`);
+      const ppBtn = document.querySelector(`button[data-playpause="${cardIdx}"]`);
+      if (prevBtn) prevBtn.addEventListener('click', () => { stopAutoPlay(); prevSlide(); if (isPlaying) startAutoPlay(); });
+      if (nextBtn) nextBtn.addEventListener('click', () => { stopAutoPlay(); nextSlide(); if (isPlaying) startAutoPlay(); });
+      if (ppBtn) ppBtn.addEventListener('click', togglePlayPause);
+      
+      showSlide(0);
+      // Ensure NO autoplay at start - user must click Play
+      isPlaying = false;
+      if (ppBtn) ppBtn.innerHTML = '<i class="fas fa-play"></i> Play';
+      stopAutoPlay();
+    });
+    if (container) container.classList.add('loaded');
+    setTimeout(() => AOS.refresh(), 100);
+  }
+  
+  setTimeout(() => renderProjects(), 200);
+  
+  // FAQ Section
+  const solarFaqs = [ 
+    { q: "Do I need NEMSA approval for solar installation?", a: "Yes. All grid-tied solar systems require NEMSA approval. We handle the entire process." }, 
+    { q: "How does net metering work?", a: "Net metering allows you to export excess solar energy to the grid and receive credits." }, 
+    { q: "Will solar work during rainy season?", a: "Absolutely. Modern panels generate 25-40% power on cloudy days, and batteries store energy." }, 
+    { q: "What financing options are available?", a: "Flexible payment plans, plus REA and CREDICORP financing." }, 
+    { q: "Is my system covered by warranty?", a: "25-year panel warranty, 10-year inverter warranty, 5-year workmanship." },
+    { q: "How long does installation take?", a: "Residential: 1-3 days. Commercial: 1-2 weeks." }
+  ];
+  const faqContainer = document.getElementById('solarFaqContainer');
+  if (faqContainer) {
+    faqContainer.innerHTML = solarFaqs.map((item, idx) => `<div class="faq-item"><div class="faq-question"><span>${item.q}</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>${item.a}</p></div></div>`).join('');
+    document.querySelectorAll('#solarFaqContainer .faq-item').forEach(item => { 
+      const qDiv = item.querySelector('.faq-question'); 
+      qDiv.addEventListener('click', () => { 
+        const isOpen = item.classList.contains('open'); 
+        if (!isOpen) { 
+          item.classList.add('open'); 
+          const ans = item.querySelector('.faq-answer'); 
+          if (ans) ans.style.maxHeight = ans.scrollHeight + "px"; 
+        } else { 
+          item.classList.remove('open'); 
+          const ans = item.querySelector('.faq-answer'); 
+          if (ans) ans.style.maxHeight = null; 
+        } 
+      }); 
+    });
+  }
+  
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => { 
+    anchor.addEventListener('click', function(e) { 
+      const href = this.getAttribute('href'); 
+      if (href && href !== '#' && href !== '#0') { 
+        const target = document.querySelector(href); 
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); } 
+      } 
+    }); 
+  });
+</script>
+</body>
+</html>

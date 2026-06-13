@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>Dynam Peak | Electrical Wiring & Installation – Before & After Projects</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { overflow-x: hidden !important; width: 100%; position: relative; scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #e0e0e0; overflow-x: hidden; width: 100%; min-height: 100vh; font-size: 16px; }
+    .container-custom { max-width: 1280px; margin: 0 auto; padding: 0 24px; width: 100%; }
+    :root { --gold: #D4AF37; --gold-dark: #B8860B; --gold-light: #E6C200; --dark: #0a0a0a; --card-bg: #0F0F0F; --border-glow: rgba(212, 175, 55, 0.3); }
+    .back-home-arrow { position: fixed; top: 24px; left: 24px; z-index: 1100; background: rgba(0,0,0,0.75); backdrop-filter: blur(8px); width: 44px; height: 44px; border-radius: 60px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--gold); transition: all 0.25s ease; cursor: pointer; text-decoration: none; color: var(--gold); font-size: 1.3rem; }
+    .back-home-arrow:hover { background: var(--gold); color: #000; transform: translateX(-4px); }
+    .hero-wiring { position: relative; width: 100%; min-height: 500px; display: flex; align-items: center; border-bottom: 1px solid var(--border-glow); background: linear-gradient(125deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.7) 100%), url('electrical-installation.jpg'); background-size: cover; background-position: center; }
+    .hero-content { position: relative; z-index: 10; padding: 100px 0 70px; width: 100%; }
+    @media (min-width: 768px) { .hero-content { padding: 120px 0 80px; } }
+    .hero-wiring .badge-wiring { background: var(--gold); color: #000; font-weight: 800; padding: 6px 18px; border-radius: 40px; display: inline-block; margin-bottom: 20px; font-size: 0.85rem; letter-spacing: 1px; }
+    .hero-wiring h1 { font-size: 2.2rem; font-weight: 800; color: var(--gold); margin-bottom: 1rem; line-height: 1.2; }
+    @media (min-width: 768px) { .hero-wiring h1 { font-size: 3rem; } }
+    @media (min-width: 992px) { .hero-wiring h1 { font-size: 3.5rem; } }
+    .hero-wiring .lead { font-size: 1rem; max-width: 550px; margin-bottom: 1.5rem; line-height: 1.5; }
+    @media (min-width: 768px) { .hero-wiring .lead { font-size: 1.1rem; } }
+    .animate-item { opacity: 0; transform: translateY(20px); animation: sweetFloatUp 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards; }
+    .delay-1 { animation-delay: 0.1s; } .delay-2 { animation-delay: 0.2s; } .delay-3 { animation-delay: 0.3s; } .delay-4 { animation-delay: 0.4s; }
+    @keyframes sweetFloatUp { 0% { opacity: 0; transform: translateY(20px); filter: blur(4px); } 100% { opacity: 1; transform: translateY(0); filter: blur(0); } }
+    .section-title { font-size: 2rem; font-weight: 800; margin-bottom: 45px; text-align: center; color: var(--gold); position: relative; }
+    @media (min-width: 768px) { .section-title { font-size: 2.5rem; margin-bottom: 55px; } }
+    .section-title:after { content: ''; display: block; width: 70px; height: 3px; background: var(--gold); margin: 15px auto 0; border-radius: 4px; }
+    .service-card-wiring { background: var(--card-bg); border-radius: 24px; padding: 30px 24px; transition: all 0.3s; height: 100%; border: 1px solid var(--border-glow); text-align: center; }
+    .service-card-wiring:hover { transform: translateY(-6px); border-color: var(--gold); }
+    .icon-circle { width: 75px; height: 75px; background: rgba(212, 175, 55, 0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+    .icon-circle i { font-size: 2.2rem; color: var(--gold); }
+    .service-card-wiring h4 { font-size: 1.3rem; margin-bottom: 12px; font-weight: 700; }
+    .service-card-wiring p { font-size: 0.9rem; line-height: 1.5; color: #ccc; }
+    
+    .process-section { background: linear-gradient(135deg, rgba(0,0,0,0.92), rgba(0,0,0,0.88)), url(' electrical-installation-process-section.jpg'); background-size: cover; background-position: center; background-attachment: fixed; padding: 60px 0; }
+    .process-step-wiring {
+      position: relative;
+      display: flex;
+      gap: 20px;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(2px);
+      border-radius: 24px;
+      padding: 28px 28px;
+      border-left: 5px solid var(--gold);
+      transition: all 0.3s ease;
+      overflow: hidden;
+      z-index: 1;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .process-step-wiring::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.2;
+      z-index: -1;
+      transition: opacity 0.3s ease;
+    }
+    .process-step-wiring:hover::before { opacity: 0.3; }
+    .process-step-wiring:hover { transform: translateY(-4px); border-left-color: var(--gold-light); background: rgba(10, 10, 10, 0.92); }
+    
+    .step-1::before { background-image: url(''); }
+    .step-2::before { background-image: url(''); }
+    .step-3::before { background-image: url(''); }
+    .step-4::before { background-image: url(''); }
+    
+    @media (max-width: 768px) {
+      .process-step-wiring { flex-direction: column; text-align: center; align-items: center; border-left: none; border-top: 5px solid var(--gold); padding: 25px; }
+      .process-step-wiring::before { opacity: 0.15; }
+    }
+    .step-number { font-size: 2.5rem; font-weight: 800; color: var(--gold); opacity: 0.8; line-height: 1; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+    .process-step-wiring h4 { font-size: 1.25rem; margin-bottom: 8px; color: var(--gold); font-weight: 700; }
+    .process-step-wiring p { font-size: 0.9rem; color: #ddd; line-height: 1.5; }
+    
+    .btn-gold { background: var(--gold); color: #000; font-weight: 700; padding: 12px 28px; border-radius: 60px; transition: 0.2s; display: inline-flex; align-items: center; gap: 10px; border: none; font-size: 0.9rem; text-decoration: none; }
+    .btn-gold:hover { background: var(--gold-dark); transform: translateY(-2px); color: #000; }
+    .safety-badge { background: rgba(212, 175, 55, 0.1); border-radius: 20px; padding: 18px; text-align: center; }
+    .safety-badge i { font-size: 2rem; }
+    .safety-badge h6 { font-size: 0.9rem; margin-top: 8px; color: var(--gold); font-weight: 600; }
+    
+    .project-ba-card {
+      background: var(--card-bg);
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid var(--border-glow);
+      transition: transform 0.3s, box-shadow 0.3s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-ba-card:hover { transform: translateY(-6px); border-color: var(--gold); box-shadow: 0 20px 30px -12px rgba(0,0,0,0.6); }
+    .media-stage {
+      position: relative;
+      background: #000;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .ba-slider {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .ba-slide-item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.4s ease;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 1;
+    }
+    .ba-slide-item.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 2;
+    }
+    .play-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background: rgba(0,0,0,0.7);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 20;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .play-overlay i { font-size: 1.8rem; color: var(--gold); margin-left: 4px; }
+    .media-stage:hover .play-overlay { opacity: 1; }
+    .slide-badge {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      z-index: 15;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(8px);
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      color: var(--gold);
+      border-left: 3px solid var(--gold);
+      pointer-events: none;
+    }
+    .card-controls {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      padding: 14px 16px;
+      background: #0c0c0c;
+      border-top: 1px solid var(--border-glow);
+      border-bottom: 1px solid var(--border-glow);
+    }
+    .ctrl-btn-sm {
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid var(--border-glow);
+      color: var(--gold);
+      border-radius: 40px;
+      padding: 6px 16px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    .ctrl-btn-sm:hover { background: var(--gold); color: #000; border-color: var(--gold); }
+    .project-info { padding: 20px 22px 22px; }
+    .project-title-ba { font-size: 1.3rem; font-weight: 800; color: var(--gold); margin-bottom: 8px; }
+    .project-desc-ba { font-size: 0.85rem; color: #bcbcbc; margin-bottom: 12px; line-height: 1.5; }
+    .badge-media-type { background: rgba(212, 175, 55, 0.2); color: var(--gold); border-radius: 30px; padding: 5px 12px; font-size: 0.7rem; display: inline-block; margin-top: 8px; }
+    
+    .recent-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border-glow);
+      transition: transform 0.3s;
+      height: 100%;
+    }
+    .recent-card:hover { transform: translateY(-6px); border-color: var(--gold); }
+    .recent-media { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #000; cursor: pointer; }
+    .recent-content { padding: 22px; }
+    .recent-title { font-size: 1.2rem; font-weight: 700; color: var(--gold); margin-bottom: 10px; }
+    .recent-desc { font-size: 0.85rem; color: #bbb; margin-bottom: 12px; line-height: 1.5; }
+    
+    .faq-item { background: var(--card-bg); border-radius: 18px; margin-bottom: 18px; border: 1px solid var(--border-glow); overflow: hidden; }
+    .faq-question { padding: 18px 22px; font-weight: 700; display: flex; justify-content: space-between; cursor: pointer; color: var(--gold); font-size: 1rem; }
+    @media (min-width: 768px) { .faq-question { font-size: 1.1rem; } }
+    .faq-answer { max-height: 0; overflow: hidden; padding: 0 22px; transition: max-height 0.4s; color: #b0b0b0; font-size: 0.9rem; line-height: 1.5; }
+    .faq-item.open .faq-answer { max-height: 200px; padding: 0 22px 18px; border-top: 1px solid var(--border-glow); }
+    
+    /* FOOTER - INCREASED FONT SIZES */
+    .footer-modern { background: #000000; padding-top: 55px; border-top: 1px solid var(--border-glow); width: 100%; }
+    .footer-modern h3 { font-size: 1.5rem; margin-bottom: 10px; }
+    @media (min-width: 768px) { .footer-modern h3 { font-size: 1.6rem; } }
+    .footer-modern h5 { font-size: 1.1rem; margin-bottom: 18px; font-weight: 700; }
+    @media (min-width: 768px) { .footer-modern h5 { font-size: 1.2rem; } }
+    .footer-modern p { font-size: 0.9rem; line-height: 1.6; }
+    .footer-link-modern { color: #e0e0e0 !important; text-decoration: none; font-size: 0.9rem; transition: 0.2s; display: inline-block; margin-bottom: 10px; }
+    .footer-link-modern:hover { color: var(--gold) !important; text-decoration: underline; transform: translateX(3px); }
+    .footer-modern ul li { margin-bottom: 8px; }
+    .copyright { border-top: 1px solid #1a1a1a; padding: 25px 0; text-align: center; margin-top: 35px; color: #aaa; font-size: 0.85rem; }
+    
+    .text-gold { color: var(--gold); }
+    .contact-btn-wrapper { text-align: center; margin: 50px 0 30px; }
+    
+    /* Responsive text adjustments */
+    @media (max-width: 768px) {
+      body { font-size: 14px; }
+      .container-custom { padding: 0 20px; }
+      .process-section { background-attachment: scroll; }
+      .hero-wiring h1 { font-size: 1.8rem; }
+      .hero-wiring .lead { font-size: 0.9rem; }
+      .section-title { font-size: 1.6rem; }
+      .service-card-wiring h4 { font-size: 1.1rem; }
+      .service-card-wiring p { font-size: 0.85rem; }
+      .project-title-ba { font-size: 1.1rem; }
+      .project-desc-ba { font-size: 0.8rem; }
+      .recent-title { font-size: 1rem; }
+      .recent-desc { font-size: 0.8rem; }
+      .footer-modern p { font-size: 0.85rem; }
+      .footer-link-modern { font-size: 0.85rem; }
+      .copyright { font-size: 0.75rem; }
+      .faq-question { font-size: 0.9rem; padding: 15px 18px; }
+      .faq-answer { font-size: 0.85rem; }
+    }
+    
+    @media (max-width: 480px) {
+      .hero-wiring h1 { font-size: 1.5rem; }
+      .section-title { font-size: 1.4rem; }
+      .section-title:after { width: 50px; }
+      .step-number { font-size: 2rem; }
+      .process-step-wiring h4 { font-size: 1.1rem; }
+      .process-step-wiring p { font-size: 0.85rem; }
+      .btn-gold { padding: 10px 20px; font-size: 0.85rem; }
+      .ctrl-btn-sm { padding: 4px 12px; font-size: 0.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="index.html" class="back-home-arrow" title="Back to Home"><i class="fas fa-arrow-left"></i></a>
+
+<section class="hero-wiring">
+  <div class="hero-content">
+    <div class="container-custom">
+      <div class="row"><div class="col-lg-8">
+        <div class="badge-wiring animate-item delay-1"><i class="fas fa-bolt me-2"></i> LICENSED & INSURED</div>
+        <h1 class="animate-item delay-2">Electrical Wiring & Installation</h1>
+        <p class="lead animate-item delay-3">Safe, code-compliant wiring for homes, businesses & industries.</p>
+        <div class="animate-item delay-4"><a href="#beforeAfterProjects" class="btn-gold"><i class="fas fa-sync-alt"></i> See Transformations →</a></div>
+        <div class="mt-4 d-flex gap-4 flex-wrap animate-item delay-4">
+          <div><span class="fw-bold fs-2" style="color:var(--gold);">500+</span><br><span style="font-size:0.85rem;">Projects Wired</span></div>
+          <div><span class="fw-bold fs-2" style="color:var(--gold);">24/7</span><br><span style="font-size:0.85rem;">Support</span></div>
+          <div><span class="fw-bold fs-2" style="color:var(--gold);">100%</span><br><span style="font-size:0.85rem;">Compliant</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<div class="container-custom py-4 py-md-5">
+  <div class="section-title" data-aos="fade-up">Comprehensive Wiring Solutions</div>
+  <div class="row g-4" data-aos="fade-up">
+    <div class="col-md-4"><div class="service-card-wiring"><div class="icon-circle"><i class="fas fa-home"></i></div><h4>Residential Wiring</h4><p>House rewiring, circuit upgrades, smart home pre-wiring.</p></div></div>
+    <div class="col-md-4"><div class="service-card-wiring"><div class="icon-circle"><i class="fas fa-building"></i></div><h4>Commercial Electrical</h4><p>Offices, retail stores, 3-phase systems, data centers.</p></div></div>
+    <div class="col-md-4"><div class="service-card-wiring"><div class="icon-circle"><i class="fas fa-industry"></i></div><h4>Industrial Installations</h4><p>Heavy-duty conduit, motor controls, PLC wiring.</p></div></div>
+  </div>
+</div>
+
+<section class="process-section">
+  <div class="container-custom">
+    <div class="section-title" data-aos="fade-up">Our Installation Process</div>
+    <div class="row g-4">
+      <div class="col-md-6" data-aos="fade-right"><div class="process-step-wiring step-1"><div class="step-number">01</div><div><h4 class="text-gold">Site Assessment</h4><p>Detailed evaluation of load needs, safety requirements, and existing infrastructure.</p></div></div></div>
+      <div class="col-md-6" data-aos="fade-left"><div class="process-step-wiring step-2"><div class="step-number">02</div><div><h4 class="text-gold">Permits & Planning</h4><p>We handle permits, create NEC-compliant blueprints, and schedule inspections.</p></div></div></div>
+      <div class="col-md-6" data-aos="fade-right"><div class="process-step-wiring step-3"><div class="step-number">03</div><div><h4 class="text-gold">Professional Installation</h4><p>Master electricians install wiring, panels, outlets, and smart devices with precision.</p></div></div></div>
+      <div class="col-md-6" data-aos="fade-left"><div class="process-step-wiring step-4"><div class="step-number">04</div><div><h4 class="text-gold">Testing & Certification</h4><p>Full circuit testing, surge analysis, and warranty activation with digital documentation.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="container-custom py-4">
+  <div class="row g-4 align-items-center">
+    <div class="col-md-6" data-aos="fade-right">
+      <h2 class="text-gold mb-3" style="font-size:1.6rem;"><i class="fas fa-shield-alt me-2"></i> Safety First</h2>
+      <p style="font-size:0.95rem; line-height:1.6;">All projects comply with NEC and local codes. We use premium copper wiring, arc-fault breakers, and provide full documentation.</p>
+      <div class="row mt-4"><div class="col-6"><div class="safety-badge"><i class="fas fa-certificate fa-2x text-gold mb-2"></i><h6>Licensed & Bonded</h6></div></div><div class="col-6"><div class="safety-badge"><i class="fas fa-clipboard-list fa-2x text-gold mb-2"></i><h6>Permit Management</h6></div></div></div>
+    </div>
+    <div class="col-md-6" data-aos="fade-left"><img src="electrical-installation.jpg" class="img-fluid rounded-4" style="border:1px solid var(--gold); width:100%; object-fit:cover;" alt="Electrician at work"></div>
+  </div>
+</div>
+
+<!-- BEFORE & AFTER PROJECTS: MANUAL CONTROLS ONLY (NO AUTO CHANGE, NO SOUND) -->
+<section class="py-5" id="beforeAfterProjects">
+  <div class="container-custom">
+    <div class="section-title" data-aos="fade-up">⚡ Before & After Transformations</div>
+    <p class="text-center mb-4" style="color:#bbb; max-width:700px; margin-left:auto; margin-right:auto; font-size:0.95rem;">Each project showcases a stunning electrical upgrade. Use Prev/Next to switch between Before and After. Click any media to view in full screen.</p>
+    <div class="row g-5 justify-content-center" id="projectsBaGrid"></div>
+  </div>
+</section>
+
+<!-- RECENT INSTALLATIONS: 3 VIDEOS + 1 IMAGE (MUTED VIDEOS, NO SOUND) -->
+<section class="py-4">
+  <div class="container-custom">
+    <div class="section-title" data-aos="fade-up">Recent Installations</div>
+    <div class="row g-4" id="recentInstallationsGrid"></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-4 py-md-5">
+  <div class="container-custom">
+    <div class="section-title" data-aos="fade-up">FAQs</div>
+    <div class="row justify-content-center"><div class="col-lg-8"><div id="wiringFaqContainer"></div></div></div>
+  </div>
+</section>
+
+<div class="contact-btn-wrapper">
+  <a href="index.html?service=electrical#contact" class="btn-gold"><i class="fas fa-envelope"></i> Contact Us for Electrical Installation</a>
+</div>
+
+<footer class="footer-modern">
+  <div class="container-custom">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <i class="fas fa-bolt fs-1 text-gold"></i>
+        <h3 class="text-gold mt-2">Dynam Peak</h3>
+        <p>Electrical excellence since 2012 — licensed, insured, and customer-first.</p>
+      </div>
+      <div class="col-md-2">
+        <h5 class="text-gold">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="footer-link-modern">Home</a></li>
+          <li><a href="#beforeAfterProjects" class="footer-link-modern">Transformations</a></li>
+          <li><a href="#wiringFaqContainer" class="footer-link-modern">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5 class="text-gold">Contact</h5>
+        <p><i class="fas fa-phone-alt me-2" style="color:var(--gold);"></i> <a href="tel:08163762896" class="text-decoration-none text-white">08163762896</a> | <a href="tel:+2348163762896" class="text-decoration-none text-white">+2348163762896</a></p>
+        <p><i class="fas fa-envelope me-2" style="color:var(--gold);"></i> <a href="mailto:dynampeakengineeringservices@gmail.com" class="text-decoration-none text-white">dynampeakengineeringservices@gmail.com</a></p>
+        <p><i class="fas fa-map-marker-alt me-2" style="color:var(--gold);"></i> Umaru Musa Yar'adua way, new millennium city, Kaduna</p>
+      </div>
+      <div class="col-md-3">
+        <h5 class="text-gold">Certifications</h5>
+        <p>✓ Licensed & Insured<br>✓ NEC Certified<br>✓ OSHA Compliant</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>&copy; 2025 Dynam Peak Electrical Division. Safe wiring for tomorrow.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: false });
+  
+  // YOUR ORIGINAL LOCAL FILE NAMES - PRESERVED
+  const projectsData = [
+    {
+      title: "Electrical Wiring & Installations",
+      description: "Electrical Wiring & Lighting Installation of a Factory,Zaria Express Way, Rigachikun, Kaduna.",
+      beforeType: "video",
+      beforeSrc: "electrical-wiring-before.mp4",
+      afterType: "video",
+      afterSrc: "electrical-wiring-after.mp4",
+      badge: "Video → Video"
+    },
+    {
+      title: "Fashion Home Rewire",
+      description: "Reinstallations and Rewiring of a fashion house at 37B Plaza,opposite Garkuwa Specialist Hospital, Isa kaita, Kaduna.",
+      beforeType: "image",
+      beforeSrc: "electrical-wiring-isa-kaita-before.jpg",
+      afterType: "video",
+      afterSrc: "electrical-wiring-isa-kaita-after.mp4",
+      badge: "Image → Video"
+    }
+  ];
+  
+  const recentInstallations = [
+    { type: "video", src: "earth-pit.mp4", title: "Earth grounding", desc: "installations and connections of earthing electrode(copper plate) for testing and maintenance", badge: "Earth-Pit" },
+
+    { type: "video", src: "electrical-wiring-after.mp4", title: "Electrical Wiring & Installations", desc: "Electrical Wiring & Lighting Installation, of a Factory along Zaria Express Way, Rigachikun, Kaduna.", badge: "Installation" },
+
+    { type: "video", src: "inverter-installation.mp4", title: "Solar Inverter", desc: "Solar Inverter Installation, Sabon Gida, New Millenium City, Kaduna.", badge: "Solar PV design" },
+
+    { type: "image", src: "kedc-meter-installation.jpg", title: "Smart Meter Installations", desc: "Full residential wiring upgrade with smart meter installations", badge: "Residential" }
+  ];
+  
+  function openFullscreen(mediaElement) {
+    if (mediaElement.tagName === 'VIDEO') {
+      mediaElement.muted = true;
+      mediaElement.play().catch(e => console.log('Play error:', e));
+      if (mediaElement.requestFullscreen) mediaElement.requestFullscreen();
+      else if (mediaElement.webkitRequestFullscreen) mediaElement.webkitRequestFullscreen();
+      else if (mediaElement.msRequestFullscreen) mediaElement.msRequestFullscreen();
+    } else if (mediaElement.tagName === 'IMG') {
+      const modal = document.createElement('div');
+      modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:10000;display:flex;align-items:center;justify-content:center;cursor:pointer';
+      const modalImg = document.createElement('img');
+      modalImg.src = mediaElement.src;
+      modalImg.style.cssText = 'max-width:90%;max-height:90%;object-fit:contain;border:3px solid var(--gold);border-radius:12px';
+      const closeBtn = document.createElement('button');
+      closeBtn.innerHTML = '✕';
+      closeBtn.style.cssText = 'position:absolute;top:20px;right:30px;font-size:2rem;background:transparent;border:none;color:var(--gold);cursor:pointer;z-index:10001';
+      modal.appendChild(modalImg);
+      modal.appendChild(closeBtn);
+      document.body.appendChild(modal);
+      document.body.style.overflow = 'hidden';
+      const closeModal = () => { modal.remove(); document.body.style.overflow = ''; };
+      modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+      closeBtn.addEventListener('click', closeModal);
+    }
+  }
+  
+  // Render Before & After Cards
+  const container = document.getElementById('projectsBaGrid');
+  if(container) {
+    container.innerHTML = projectsData.map((proj, idx) => {
+      return `
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="${idx * 100}">
+          <div class="project-ba-card" data-card-index="${idx}">
+            <div class="media-stage">
+              <div class="ba-slider" id="slider-${idx}">
+                ${proj.beforeType === 'video' 
+                  ? `<video class="ba-slide-item" id="before-${idx}" muted playsinline><source src="${proj.beforeSrc}" type="video/mp4"></video>` 
+                  : `<img class="ba-slide-item" id="before-${idx}" src="${proj.beforeSrc}" alt="Before condition">`}
+                ${proj.afterType === 'video' 
+                  ? `<video class="ba-slide-item" id="after-${idx}" muted playsinline><source src="${proj.afterSrc}" type="video/mp4"></video>` 
+                  : `<img class="ba-slide-item" id="after-${idx}" src="${proj.afterSrc}" alt="After upgrade">`}
+              </div>
+              <div class="play-overlay"><i class="fas fa-expand"></i></div>
+              <div class="slide-badge" id="label-${idx}">BEFORE: Original State</div>
+            </div>
+            <div class="card-controls">
+              <button class="ctrl-btn-sm" data-prev="${idx}"><i class="fas fa-chevron-left"></i> Prev</button>
+              <button class="ctrl-btn-sm" data-playpause="${idx}"><i class="fas fa-pause"></i> Pause</button>
+              <button class="ctrl-btn-sm" data-next="${idx}">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="project-info">
+              <div class="project-title-ba">${proj.title}</div>
+              <div class="project-desc-ba">${proj.description}</div>
+              <span class="badge-media-type"><i class="fas fa-play-circle"></i> ${proj.badge}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+    
+    projectsData.forEach((proj, idx) => {
+      const beforeEl = document.getElementById(`before-${idx}`);
+      const afterEl = document.getElementById(`after-${idx}`);
+      const labelSpan = document.getElementById(`label-${idx}`);
+      const mediaStage = document.querySelector(`.project-ba-card[data-card-index="${idx}"] .media-stage`);
+      const playOverlay = document.querySelector(`.project-ba-card[data-card-index="${idx}"] .play-overlay`);
+      
+      if(!beforeEl || !afterEl) return;
+      
+      let currentState = 0;
+      let isPlaying = true;
+      
+      [beforeEl, afterEl].forEach(el => {
+        if(el.tagName === 'VIDEO') {
+          el.muted = true;
+          el.setAttribute('muted', '');
+          el.setAttribute('playsinline', '');
+          el.play().catch(e => console.log("Autoplay muted:", e));
+        }
+      });
+      
+      beforeEl.classList.add('active');
+      afterEl.classList.remove('active');
+      labelSpan.innerText = "BEFORE: Original State";
+      
+      const handleFullscreen = (e) => {
+        e.stopPropagation();
+        const activeSlide = document.querySelector(`#slider-${idx} .ba-slide-item.active`);
+        if (activeSlide) {
+          if (activeSlide.tagName === 'VIDEO') {
+            activeSlide.muted = true;
+            activeSlide.play().catch(e => console.log());
+          }
+          openFullscreen(activeSlide);
+        }
+      };
+      if (mediaStage) mediaStage.addEventListener('click', handleFullscreen);
+      if (playOverlay) playOverlay.addEventListener('click', handleFullscreen);
+      
+      function toggleState() {
+        if(currentState === 0) {
+          if(beforeEl.tagName === 'VIDEO') beforeEl.pause();
+          beforeEl.classList.remove('active');
+          afterEl.classList.add('active');
+          labelSpan.innerText = "AFTER: Modern Upgrade";
+          currentState = 1;
+          if(afterEl.tagName === 'VIDEO') {
+            afterEl.currentTime = 0;
+            afterEl.muted = true;
+            afterEl.play().catch(e => console.log());
+          }
+        } else {
+          if(afterEl.tagName === 'VIDEO') afterEl.pause();
+          afterEl.classList.remove('active');
+          beforeEl.classList.add('active');
+          labelSpan.innerText = "BEFORE: Original State";
+          currentState = 0;
+          if(beforeEl.tagName === 'VIDEO') {
+            beforeEl.currentTime = 0;
+            beforeEl.muted = true;
+            beforeEl.play().catch(e => console.log());
+          }
+        }
+      }
+      
+      function manualNext() { toggleState(); }
+      function manualPrev() { toggleState(); }
+      
+      function togglePlayPauseCard() {
+        const activeVideo = currentState === 0 ? beforeEl : afterEl;
+        if(activeVideo.tagName === 'VIDEO') {
+          isPlaying = !isPlaying;
+          const btn = document.querySelector(`button[data-playpause="${idx}"]`);
+          if(isPlaying) {
+            btn.innerHTML = '<i class="fas fa-pause"></i> Pause';
+            activeVideo.play().catch(e => console.log());
+          } else {
+            btn.innerHTML = '<i class="fas fa-play"></i> Play';
+            activeVideo.pause();
+          }
+        } else {
+          isPlaying = !isPlaying;
+          const btn = document.querySelector(`button[data-playpause="${idx}"]`);
+          if(isPlaying) {
+            btn.innerHTML = '<i class="fas fa-pause"></i> Pause';
+          } else {
+            btn.innerHTML = '<i class="fas fa-play"></i> Play';
+          }
+        }
+      }
+      
+      const prevBtn = document.querySelector(`button[data-prev="${idx}"]`);
+      const nextBtn = document.querySelector(`button[data-next="${idx}"]`);
+      const ppBtn = document.querySelector(`button[data-playpause="${idx}"]`);
+      if(prevBtn) prevBtn.addEventListener('click', manualPrev);
+      if(nextBtn) nextBtn.addEventListener('click', manualNext);
+      if(ppBtn) ppBtn.addEventListener('click', togglePlayPauseCard);
+    });
+  }
+  
+  // Render Recent Installations
+  const recentGrid = document.getElementById('recentInstallationsGrid');
+  if(recentGrid) {
+    recentGrid.innerHTML = recentInstallations.map((item, idx) => `
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="${idx * 100}">
+        <div class="recent-card">
+          ${item.type === 'video' 
+            ? `<video class="recent-media" muted playsinline><source src="${item.src}" type="video/mp4"></video>`
+            : `<img class="recent-media" src="${item.src}" alt="${item.title}">`
+          }
+          <div class="recent-content">
+            <div class="badge-media-type"><i class="fas ${item.type === 'video' ? 'fa-video' : 'fa-image'}"></i> ${item.type === 'video' ? 'Project Video' : 'After Installation'}</div>
+            <h5 class="recent-title mt-2">${item.title}</h5>
+            <p class="recent-desc">${item.desc}</p>
+            <span class="badge-media-type">${item.badge}</span>
+          </div>
+        </div>
+      </div>
+    `).join('');
+    
+    const recentCards = document.querySelectorAll('.recent-card');
+    recentCards.forEach((card, idx) => {
+      const mediaElement = card.querySelector('.recent-media');
+      if(mediaElement && mediaElement.tagName === 'VIDEO') {
+        mediaElement.muted = true;
+        mediaElement.setAttribute('muted', '');
+        mediaElement.setAttribute('playsinline', '');
+        mediaElement.play().catch(e => console.log());
+        
+        card.addEventListener('mouseenter', () => mediaElement.play().catch(e => console.log()));
+        card.addEventListener('mouseleave', () => mediaElement.pause());
+        
+        mediaElement.addEventListener('click', (e) => { 
+          e.stopPropagation(); 
+          mediaElement.muted = true;
+          openFullscreen(mediaElement); 
+        });
+      } else if(mediaElement && mediaElement.tagName === 'IMG') {
+        mediaElement.addEventListener('click', (e) => { e.stopPropagation(); openFullscreen(mediaElement); });
+      }
+    });
+  }
+  
+  // FAQ
+  const wiringFaqs = [ 
+    { q: "How long does a house rewiring take?", a: "Typically 2-5 days depending on house size." }, 
+    { q: "Do you handle old fuse box upgrades?", a: "Yes, we replace outdated fuse panels with modern breakers." }, 
+    { q: "Are your electricians certified?", a: "Yes, all are licensed, insured, and NEC trained." }, 
+    { q: "Do you provide wiring for new construction?", a: "Yes, rough-in, trim-out, and final sign-off included." }, 
+    { q: "What warranty do you offer?", a: "5-year workmanship warranty on all installations." } 
+  ];
+  const faqContainer = document.getElementById('wiringFaqContainer');
+  if(faqContainer) {
+    faqContainer.innerHTML = wiringFaqs.map(item => `<div class="faq-item"><div class="faq-question"><span>${item.q}</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>${item.a}</p></div></div>`).join('');
+    document.querySelectorAll('#wiringFaqContainer .faq-item').forEach(item => { 
+      const qDiv = item.querySelector('.faq-question'); 
+      qDiv.addEventListener('click', () => { 
+        const isOpen = item.classList.contains('open'); 
+        if(!isOpen) { 
+          item.classList.add('open'); 
+          const aDiv = item.querySelector('.faq-answer'); 
+          if(aDiv) aDiv.style.maxHeight = aDiv.scrollHeight + "px"; 
+        } else { 
+          item.classList.remove('open'); 
+          const aDiv = item.querySelector('.faq-answer'); 
+          if(aDiv) aDiv.style.maxHeight = null; 
+        } 
+      }); 
+    });
+  }
+  
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => { 
+    anchor.addEventListener('click', function(e) { 
+      const href = this.getAttribute('href'); 
+      if(href && href !== '#' && href !== '#0') { 
+        const target = document.querySelector(href); 
+        if(target) { 
+          e.preventDefault(); 
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
+        } 
+      } 
+    }); 
+  });
+</script>
+</body>
+</html>
